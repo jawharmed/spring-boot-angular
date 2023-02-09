@@ -40,8 +40,7 @@ public class User {
     @Column(name = "date_creation")
     private Date dateCreation;
 
-//    @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH})
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH})
     private Adresse adresse;
 
 }
