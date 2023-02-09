@@ -4,6 +4,8 @@ import com.formation.springbootangular.entity.User;
 import com.formation.springbootangular.repository.UserRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class UserService {
 
@@ -27,4 +29,11 @@ public class UserService {
         return userRepository.save(user);
     }
 
+    public List<User> getAllUsers() {
+        return userRepository.findAll();
+    }
+
+    public void deleteUser(Integer id){
+        userRepository.deleteById(id);
+    }
 }
