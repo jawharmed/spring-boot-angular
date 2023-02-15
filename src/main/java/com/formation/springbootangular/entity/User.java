@@ -7,6 +7,7 @@ import org.springframework.lang.NonNull;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @Data
 @NoArgsConstructor
@@ -40,7 +41,8 @@ public class User {
     @Column(name = "date_creation")
     private Date dateCreation;
 
-    @OneToOne(cascade = CascadeType.PERSIST)
-    private Adresse adresse;
+    // FIX-ModificationUSER -- OLD OneToOne
+    @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH})
+    private List<Adresse> adresse;
 
 }
