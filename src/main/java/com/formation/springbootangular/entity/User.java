@@ -45,4 +45,7 @@ public class User {
     @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH})
     private List<Adresse> adresse;
 
+    // FEAT-userprofile
+    @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH})
+    private List<UserProfile> userProfile;
 }
