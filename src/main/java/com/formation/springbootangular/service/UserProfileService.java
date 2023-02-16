@@ -35,7 +35,7 @@ public class UserProfileService {
      * @throws Exception
      */
     public UserProfile update(UserProfile userProfile) throws Exception {
-        userProfileRepository.findById(userProfile.getId()).orElseThrow(() -> new Exception("Le userprofile n'existe pas !")) ;
+        userProfileRepository.findById(userProfile.getId()).orElseThrow(() -> new Exception("Le userprofile n'existe pas.")) ;
         return userProfileRepository.save(userProfile) ;
     }
     /**
